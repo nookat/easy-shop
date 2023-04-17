@@ -1,3 +1,3 @@
 # tocode-react-template
 
-Сборка под React проекты
+Интернет-магазин
