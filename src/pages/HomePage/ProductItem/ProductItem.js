@@ -20,24 +20,30 @@ const ProductItem = () => {
     } else {
       navigate('/');
     }
-  }, [])
+  }, []);
 
   // content
   const renderContent = item && (
-    <>
-      <h1 className="ui-title-1">{item.title}</h1>
-    </>
-  );
+    <div className="flex flex-col items-center">
+      <img src={item.img} alt={item.title} style={{ maxWidth: '420px' }}/>
+      <h1 className="ui-title-1" style={{color: 'white'}}>{item.title}</h1>
+      <span className="ui-title-3" style={{color: 'white'}}>{item.price}</span>
 
-  // link to home
-  const renderHomeLink = (
-    <p>Please go to Home page: <Link to="/">Link</Link></p>
+      {/*  controls */}
+      <div className="flex mt-4">
+        <Link to="/" className="ui-button isLink">
+          Back to home
+        </Link>
+        <div className="ui-button isPrimary">
+          Add to card
+        </div>
+      </div>
+    </div>
   );
 
   return (
     <Container>
       {renderContent}
-      {renderHomeLink}
     </Container>
   );
 };
